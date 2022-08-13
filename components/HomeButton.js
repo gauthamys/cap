@@ -6,9 +6,11 @@ import Link from "next/link";
 
 const HomeButton = () => {
     return (
-        <div className={styles.circleDiv}>
-            <Link href="/" className={styles.link}><FontAwesomeIcon icon={faHome} /></Link>
-        </div>
+        <Link href="/" className={styles.link}>
+            <div className={styles.circleDiv}>
+            <FontAwesomeIcon icon={faHome} />
+            </div>
+        </Link>
     )
 }
 
