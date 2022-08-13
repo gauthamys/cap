@@ -20,7 +20,9 @@
 }
 
 .essayInput .prompt .submitEssay{
-    padding: 5px;
+    padding: 8px;
+    min-width: 20%;
+    font-size: 16px;
     background-color: rgb(0, 148, 39);
     text-decoration: none;
     cursor: pointer;

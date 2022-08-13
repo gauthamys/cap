@@ -1,0 +1,14 @@
+.circleDiv {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
