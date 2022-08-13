@@ -9,7 +9,7 @@ export default function Essay(props){
                 <p className={commonStyles.title}>Essay Assessment</p>
             </div>
             <div className={styles.essayInput}>
-                <div class={styles.prompt}>
+                <div className={styles.prompt}>
                     <p>Prompt</p>
                     <button href='/essay' className={styles.submitEssay}>Submit to see score and feedback</button>
                 </div>
