@@ -11,4 +11,11 @@
     position: fixed;
     top: 50px;
     right: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.circleDiv:hover {
+    background-color: black;
+    color: aquamarine;
+    cursor: pointer;
 }
