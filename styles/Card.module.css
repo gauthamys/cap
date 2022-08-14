@@ -13,6 +13,7 @@
 
 .card:hover {
     border: 2px solid aquamarine;
+    cursor: pointer;
 }
 
 .card .cardHeader {
@@ -43,7 +44,6 @@
 
 .card:hover .cardButton {
     color: aquamarine;
-    text-decoration: underline;
 }
 
 .card:hover .Image {
