@@ -11,7 +11,7 @@ const Card = (props) => {
           </div>
           <div className={styles.cardBody}>
             <p>{props.body}</p>
-            <a href={props.linkTo} className={styles.cardButton}>Get started with {props.title} {'>'} </a>
+            <a href={props.linkTo} className={styles.cardButton}>Get started with {props.title} </a>
           </div>
         </div>    
     )

@@ -1,6 +1,6 @@
 .card {
     min-width: 100%;
-    min-height: 400px;
+    min-height: 500px;
     padding: 25px 20px;
     border: 3px solid rgb(35, 34, 34);
     border-radius: 10px;
@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     text-align: center;
+    padding: 0 20px;
 }
 
 .card .cardBody {
@@ -46,7 +47,7 @@
 }
 
 .card:hover .Image {
-    transform: scale(1.2) translateY(20px);
+    transform: scale(1.2) translateY(-10px);
     border-radius: 0;
 }
 
@@ -71,7 +72,7 @@
 @media screen and (max-width: 768px) {
     .card {
         grid-template-columns: 100%;
-        min-height: 300px;
+        /* min-height: 300px; */
     }
     .card .cardBody {
         padding: 0 1rem;

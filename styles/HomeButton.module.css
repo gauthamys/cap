@@ -19,3 +19,12 @@
     color: aquamarine;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .circleDiv {
+        right: 10px;
+        top: 90%;
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -4,8 +4,10 @@ import styles from "../styles/WordProblems.module.css";
 
 export default function WordProblems(props){
     return(
-        <div>
-            <p className={styles.title}>Word Problems</p>
+        <div className={commonStyles.centeredDiv}>
+            <div className={commonStyles.pageHead}>
+                <p className={commonStyles.title}>Word Problem Solver</p>
+            </div>
             <div className={styles.wordProblemInput}>
 
             </div>

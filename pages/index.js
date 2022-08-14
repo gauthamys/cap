@@ -13,6 +13,13 @@ export default function Home() {
         <Card src="undraw_writing.svg" title="Essays" linkTo='/essay' />
         <Card src="undraw_maths.svg" title="Word Problems" linkTo='/word-problems'/>
       </div>
+      <div className={styles.centeredDiv}>
+        <p>
+          {/*
+            content here
+          */}
+        </p>
+      </div>
     </div>
   )
 }
