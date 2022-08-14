@@ -72,7 +72,7 @@
 @media screen and (max-width: 768px) {
     .card {
         grid-template-columns: 100%;
-        /* min-height: 300px; */
+        min-height: 200px;
     }
     .card .cardBody {
         padding: 0 1rem;
