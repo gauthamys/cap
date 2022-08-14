@@ -5,14 +5,16 @@ import Image from "next/image";
 
 const Layout = ({ children }) => {
   return (
-    <main className={styles.main}>
-      {children}
-      <HomeButton />
-      <footer className={styles.footer}>
-        {/* <p>&copy; {new Date().getFullYear()}</p> */}
-        {/* <Image src="/pes.png" alt="Next.js" height={50} width={50} /> */}
-      </footer>
-    </main>
+  <>
+  <main className={styles.main}>
+    {children}
+    <HomeButton />
+  </main>
+  <div className={styles.footer}>
+  {/* <p>&copy; {new Date().getFullYear()}</p> */}
+  {/* <Image src="/pes.png" alt="Next.js" height={50} width={50} /> */}
+  </div>
+  </>
   );
 }
 

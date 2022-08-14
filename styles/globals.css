@@ -6,6 +6,20 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 4rem;
+  margin-top: 100px;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, black, rgb(35, 34, 34));
+}
+
 a {
   color: inherit;
   text-decoration: none;

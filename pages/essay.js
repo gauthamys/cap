@@ -23,7 +23,23 @@ export default function Essay(props){
             <div className={styles.essayInput}>
                 <div className={styles.prompt}>
                     <p>Prompt</p>
-                    <select>
+                    <select className={styles.select}>
+                        {
+                            prompts.map((prompt, index) => {
+                                return <option key={index}>{prompt}</option>
+                            })
+                        }
+                    </select>
+                    <button href='/essay' className={styles.submitEssay}>
+                        <FontAwesomeIcon icon={faPaperPlane} />
+                    </button>
+                </div>
+                <textarea className={styles.textarea} placeholder="Write your essay here..."></textarea>
+            </div>
+            <div className={styles.essayInput}>
+                <div className={styles.prompt}>
+                    <p>Prompt</p>
+                    <select className={styles.select}>
                         {
                             prompts.map((prompt, index) => {
                                 return <option key={index}>{prompt}</option>

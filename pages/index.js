@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <h1 className={commonStyles.title}>Numerite</h1>
-      <div className={commonStyles.container}>
+      <div className={styles.container}>
         <Card src="undraw_writing.svg" title="Essays" linkTo='/essay' />
         <Card src="undraw_maths.svg" title="Word Problems" linkTo='/word-problems'/>
       </div>
