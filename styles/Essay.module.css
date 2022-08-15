@@ -46,7 +46,7 @@
     background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
     background-position-x: -5px;
     line-height: 25px;
-    min-height: 450px;
+    min-height: 550px;
     width: 100%;
     padding: 30px;
     resize: vertical;
@@ -55,6 +55,22 @@
     border-left: none;
     color: black;
     resize: none;
+    overflow-y: hidden;
+}
+
+.essayContainer {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-radius: 0 5px 5px 0;
+}
+
+.essayContainer .wordCount {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: wavy;
+    color: black;
 }
 
 @media screen and (max-width: 768px) {

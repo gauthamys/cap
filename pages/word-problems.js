@@ -8,7 +8,7 @@ import { faFlask } from "@fortawesome/free-solid-svg-icons";
 
 export default function WordProblems(props){
     const [problem, setProblem] = React.useState('');
-    const [solve, setSolve] = React.useState(false);
+    const [solution, setSolution] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     function handleProblemChange(e) {
         setProblem(e.target.value);
@@ -16,10 +16,12 @@ export default function WordProblems(props){
     function handleClick(e){
         //setSolve(!solve);
         setLoading(true);
+        setSolution('');
         // fetch solution from server and display it
         setTimeout(() => {
+            setSolution('Solution');
             setLoading(false);
-        }, 2000);
+        }, 5000);
     }
     return(
         <div className={commonStyles.centeredDiv}>
@@ -37,7 +39,7 @@ export default function WordProblems(props){
                 </div>
                 <div className={styles.solution}>
                     <img src='/flask.svg' className={loading ? styles.bgImage : styles.bgImageHidden}/>
-                    <p>Solution</p>
+                    <p>{solution}</p>
                 </div>
             </div>
         </div>    

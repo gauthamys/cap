@@ -31,6 +31,9 @@ export default function Essay(props){
         //         console.log(err)
         //     })
     }
+    function wordCount(str) {
+        return str.split(/\s+/).length - 1;
+    }
 
     return(
         <div className={commonStyles.centeredDiv}>
@@ -51,7 +54,10 @@ export default function Essay(props){
                         <FontAwesomeIcon icon={faPaperPlane} />
                     </button>
                 </div>
-                <textarea value={essay} onChange={(e) => setEssay(e.target.value)} className={styles.textarea} placeholder="Write your essay here..."></textarea>
+                <div className={styles.essayContainer}>
+                    <textarea value={essay} onChange={(e) => setEssay(e.target.value)} className={styles.textarea} placeholder="Write your essay here..."></textarea>
+                    <p className={styles.wordCount}>{wordCount(essay)} words</p>
+                </div>
             </div>
         </div>
     )
