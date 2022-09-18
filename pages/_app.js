@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Layout from '../components/Layouts'
 import Head from 'next/head'
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import commonStyles from "../styles/Common.module.css";
 import styles from "../styles/WordProblems.module.css";
 import flask from '../public/flask1.svg';
@@ -10,19 +10,51 @@ export default function WordProblems(props){
     const [problem, setProblem] = React.useState('');
     const [solution, setSolution] = React.useState('');
     const [loading, setLoading] = React.useState(false);
+    const [data, setData] = useState('')
+
+    // useEffect(()=> {
+    //   fetch("http://localhost:3080").then(
+    //     res => res.json()
+    //   ).then(
+    //     data => {
+    //       setData(data)
+    //       console.log(data)
+    //     }
+    //   )
+    // }, [])
+
     function handleProblemChange(e) {
         setProblem(e.target.value);
     }
+
+    function fetchPrediction(){
+        fetch("http://localhost:3080/word-problem").then(
+          res => res.json()
+        ).then(
+              data => {
+              setData(data)
+              console.log(data)
+            }
+        )
+    }
+
     function handleClick(e){
         //setSolve(!solve);
         setLoading(true);
-        setSolution('');
-        // fetch solution from server and display it
-        setTimeout(() => {
-            setSolution('Solution');
+        var equation = "a+b=c"
+        fetchPrediction()
+        // var equation = fetchPrediction(<take PROBLEM VALUE>);
+        if(equation){
+            setSolution(equation);
             setLoading(false);
-        }, 5000);
+        }
+        // fetch solution from server and display it
+        // setTimeout(() => {
+        //     setSolution('Solution');
+        //     setLoading(false);
+        // }, 5000);
     }
+
     return(
         <div className={commonStyles.centeredDiv}>
             <div className={commonStyles.pageHead}>
@@ -30,7 +62,7 @@ export default function WordProblems(props){
             </div>
             <div className={styles.container}>
                 <div className={styles.questionContainer}>
-                    <p>Enter word problem here</p>
+                    <p>Enter word problem below!</p>
                     <textarea placeholder="> " value={problem} className={styles.wpInput} onChange={handleProblemChange}>
                     </textarea>
                     <a className={styles.submit} onClick={handleClick}>
