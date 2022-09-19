@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import commonStyles from "../styles/Common.module.css";
 import styles from "../styles/WordProblems.module.css";
-import flask from '../public/flask1.svg';
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFlask } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,25 +8,18 @@ export default function WordProblems(props){
     const [problem, setProblem] = React.useState('');
     const [solution, setSolution] = React.useState('');
     const [loading, setLoading] = React.useState(false);
-    const [data, setData] = useState('')
-
-    // useEffect(()=> {
-    //   fetch("http://localhost:3080").then(
-    //     res => res.json()
-    //   ).then(
-    //     data => {
-    //       setData(data)
-    //       console.log(data)
-    //     }
-    //   )
-    // }, [])
+    // const [prediction, setPrediction] = useState('')
 
     function handleProblemChange(e) {
         setProblem(e.target.value);
     }
 
-    function fetchPrediction(){
-        fetch("http://localhost:3080/word-problem").then(
+    function fetchPrediction(mwp){
+        // const encodedProblem = encodeURIComponent(mwp);
+        // fetch(`https://localhost:3000/word-problem?mwp=${encodedProblem}`)
+        var url = 'https://localhost:3000/word-problem';
+        fetch(url)
+        .then(
           res => res.json()
         ).then(
               data => {
@@ -36,23 +27,23 @@ export default function WordProblems(props){
               console.log(data)
             }
         )
+        // return prediction;
     }
 
     function handleClick(e){
-        //setSolve(!solve);
         setLoading(true);
-        var equation = "a+b=c"
-        fetchPrediction()
-        // var equation = fetchPrediction(<take PROBLEM VALUE>);
+        // var equation = "a+b=c"
+        // fetchPrediction()
+        var equation = fetchPrediction(problem);
         if(equation){
             setSolution(equation);
             setLoading(false);
         }
         // fetch solution from server and display it
-        // setTimeout(() => {
-        //     setSolution('Solution');
-        //     setLoading(false);
-        // }, 5000);
+        setTimeout(() => {
+            setSolution('The solution could not be fetched at this time. Please try gain later.');
+            setLoading(false);
+        }, 150000);
     }
 
     return(
@@ -63,7 +54,7 @@ export default function WordProblems(props){
             <div className={styles.container}>
                 <div className={styles.questionContainer}>
                     <p>Enter word problem below!</p>
-                    <textarea placeholder="> " value={problem} className={styles.wpInput} onChange={handleProblemChange}>
+                    <textarea placeholder="Enter word problem here." value={problem} className={styles.wpInput} onChange={handleProblemChange}>
                     </textarea>
                     <a className={styles.submit} onClick={handleClick}>
                         <FontAwesomeIcon icon={faFlask} /> solve
