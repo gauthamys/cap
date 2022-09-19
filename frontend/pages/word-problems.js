@@ -8,26 +8,23 @@ export default function WordProblems(props){
     const [problem, setProblem] = React.useState('');
     const [solution, setSolution] = React.useState('');
     const [loading, setLoading] = React.useState(false);
-    // const [prediction, setPrediction] = useState('')
+    const [prediction, setPrediction] = useState('')
 
     function handleProblemChange(e) {
         setProblem(e.target.value);
     }
 
     function fetchPrediction(mwp){
-
-// I AM STUCK PLS HELP ME
-
-        // const encodedProblem = encodeURIComponent(mwp);
-        // fetch(`https://localhost:3000/word-problem?mwp=${encodedProblem}`)
-        var url = 'https://localhost:5000/mwp';
+        const encodedProblem = encodeURIComponent(mwp);
+        fetch(`http://localhost:3000/word-problem?mwp=${encodedProblem}`)
+        // var url = 'http://localhost:5000/mwp';
         fetch(url)
         .then(res => res.json()).then(
-            data => {
-            setData(data)
-            console.log(data)
+            prediction => {
+            setPrediction(prediction)
+            console.log(prediction)
         })
-        // return prediction;
+        return prediction;
     }
 
     function handleClick(e){
@@ -41,7 +38,7 @@ export default function WordProblems(props){
         }
         // fetch solution from server and display it
         setTimeout(() => {
-            setSolution('The solution could not be fetched at this time. Please try gain later.');
+            setSolution('The solution could not be fetched at this time. Please try again later.');
             setLoading(false);
         }, 150000);
     }
