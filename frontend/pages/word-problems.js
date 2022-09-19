@@ -15,18 +15,18 @@ export default function WordProblems(props){
     }
 
     function fetchPrediction(mwp){
+
+// I AM STUCK PLS HELP ME
+
         // const encodedProblem = encodeURIComponent(mwp);
         // fetch(`https://localhost:3000/word-problem?mwp=${encodedProblem}`)
-        var url = 'https://localhost:3000/word-problem';
+        var url = 'https://localhost:5000/mwp';
         fetch(url)
-        .then(
-          res => res.json()
-        ).then(
-              data => {
-              setData(data)
-              console.log(data)
-            }
-        )
+        .then(res => res.json()).then(
+            data => {
+            setData(data)
+            console.log(data)
+        })
         // return prediction;
     }
 
