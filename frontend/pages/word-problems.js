@@ -15,32 +15,23 @@ export default function WordProblems(props){
     }
 
     function fetchPrediction(mwp){
-        const encodedProblem = encodeURIComponent(mwp);
-        fetch(`http://localhost:3000/word-problem?mwp=${encodedProblem}`)
-        // var url = 'http://localhost:5000/mwp';
-        fetch(url)
+        // const encodedProblem = encodeURIComponent(mwp);
+        // fetch(`http://localhost:3000/word-problem?mwp=${encodedProblem}`)
+        var url = 'http://localhost:5000/mwp';
+        fetch(url, {method: 'POST'})
         .then(res => res.json()).then(
             prediction => {
-            setPrediction(prediction)
+            setSolution(prediction.equation)
             console.log(prediction)
+            return prediction
         })
-        return prediction;
+
     }
 
     function handleClick(e){
         setLoading(true);
-        // var equation = "a+b=c"
-        // fetchPrediction()
-        var equation = fetchPrediction(problem);
-        if(equation){
-            setSolution(equation);
-            setLoading(false);
-        }
-        // fetch solution from server and display it
-        setTimeout(() => {
-            setSolution('The solution could not be fetched at this time. Please try again later.');
-            setLoading(false);
-        }, 150000);
+        fetchPrediction(problem);
+        setLoading(false);
     }
 
     return(

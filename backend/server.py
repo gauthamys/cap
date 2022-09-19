@@ -15,14 +15,15 @@ cors = CORS(app)
 @cross_origin()
 def predict():
     # Get the data from the POST request.
-    data = request.get_json(force=True)
+    # data = request.get_json(force=True)
     
-    # Make prediction using model loaded from disk as per the data.
-    prediction = model.predict([[np.array(data['exp'])]])
+    # # Make prediction using model loaded from disk as per the data.
+    # prediction = model.predict([[np.array(data['exp'])]])
     
-    # Take the first value of prediction
-    output = prediction[0]
-    return jsonify(output)
+    # # Take the first value of prediction
+    # output = prediction[0]
+    # return jsonify(output)
+    return {"equation": "10y + 6 = 46"}
   
       
 # Running app
